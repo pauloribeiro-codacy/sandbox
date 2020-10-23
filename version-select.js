@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 nodeText.push(element.textContent);
             }
             var prefix = nodeText[0].slice(0,-1);
-            window.versionPages[version] = nodeText.map(function(e) {
+            window.versionPages[version] = nodeText.map(function(event) {
                 return removePrefix(e, prefix);
             });
         };
