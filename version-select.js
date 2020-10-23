@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", function() {
     window.versionPages = {};
     var VERSION = window.location.pathname.split("/")[1];
     var VERSION_LATEST = ".";
+    var my_new_variable = "";
 
     function removePrefix(str, prefix) {
         var hasPrefix = str.indexOf(prefix) === 0;
