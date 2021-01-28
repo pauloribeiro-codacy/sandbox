@@ -64,7 +64,4 @@ exports.ransomNote = function(note, magazine) {
 };
 
 // Test code
-function isAuthenticated(user, token) {
-  var correctToken = FetchUserTokenFromDB(user);
-  return token === correctToken;
-}
+var utils = require( "utils" );
