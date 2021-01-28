@@ -1,2 +1,3 @@
-var foo = "<div>Hello world!</div>";
-foo(foo);
+function main(a, b) {
+  return a == null;
+}
