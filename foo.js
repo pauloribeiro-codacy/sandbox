@@ -63,3 +63,8 @@ exports.ransomNote = function(note, magazine) {
   return possible;
 };
 
+// Test code
+function isAuthenticated(user, token) {
+  var correctToken = FetchUserTokenFromDB(user);
+  return token === correctToken;
+}
