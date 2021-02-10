@@ -157,6 +157,29 @@ window.addEventListener("DOMContentLoaded", function() {
         placeSelectElement(select);
     }
 
+    function populateVersions(version) {
+        var versionPath = version === VERSION_LATEST ? "" : "/" + version;
+        window.versionPages[version] = [];
+
+        var xhrSitemap = new XMLHttpRequest();
+        var sitemapURL = window.location.origin + versionPath + '/sitemap.xml';
+        xhrSitemap.open("GET", sitemapURL);
+        xhrSitemap.onload = function() {
+            var xmlLoc = this.responseXML.getElementsByTagName('loc');
+            var nodeText = undefined;
+    
+            for (var index = 0; index < xmlLoc.length; index++) {
+                var element = xmlLoc[index];
+                nodeText.push(element.textContent);
+            }
+            var prefix = nodeText[0].slice(0,-1);
+            window.versionPages[version] = nodeText.map(function(e) {
+                return removePrefix(e, prefix);
+            });
+        };
+        xhrSitemap.send();
+    }
+
     fetchVersions(generateVersionSwitcher);
     // used to test without mike
     // var staticJSON = [{"version": "v1.4.0", "title": "v1.4.0", "aliases": []}, {"version": ".", "title": "Cloud", "aliases": []}];
