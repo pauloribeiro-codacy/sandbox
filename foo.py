@@ -2,6 +2,7 @@
 
 import hashlib
 import random
+import telnetlib
 
 a = hashlib.sha1(str(random.getrandbits(256)))
 
