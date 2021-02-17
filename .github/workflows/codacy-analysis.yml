@@ -45,7 +45,7 @@ jobs:
         with:
           sarif_file: results.sarif
 
-      - name: Archive results
+      - name: Upload results as artifact
         uses: actions/upload-artifact@v2
         with:
           name: output-results-sarif
