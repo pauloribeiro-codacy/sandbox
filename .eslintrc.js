@@ -6,4 +6,4 @@ module.exports = {
     "plugin:security/recommended",
     "eslint:all"
   ]
-}
+};
