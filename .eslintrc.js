@@ -1,9 +1,9 @@
 module.exports = {
-  "plugins": [
-    "security"
-  ],
-  "extends": [
-    "plugin:security/recommended",
-    "eslint:all"
-  ]
+    "plugins": [
+        "security"
+    ],
+    "extends": [
+        "plugin:security/recommended",
+        "eslint:all"
+    ]
 };
